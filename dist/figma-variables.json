@@ -1,0 +1,150 @@
+{
+  "collections": [
+    {
+      "name": "Design System",
+      "modes": [
+        {
+          "name": "Default",
+          "variables": {
+            "typography/fontFamily/primary": {
+              "type": "STRING",
+              "value": "'Inter', sans-serif"
+            },
+            "typography/fontFamily/secondary": {
+              "type": "STRING",
+              "value": "'Roboto', sans-serif"
+            },
+            "typography/fontFamily/mono": {
+              "type": "STRING",
+              "value": "'Fira Code', monospace"
+            },
+            "typography/fontSize/xs": {
+              "type": "FLOAT",
+              "value": 12
+            },
+            "typography/fontSize/sm": {
+              "type": "FLOAT",
+              "value": 14
+            },
+            "typography/fontSize/base": {
+              "type": "FLOAT",
+              "value": 16
+            },
+            "typography/fontSize/lg": {
+              "type": "FLOAT",
+              "value": 18
+            },
+            "typography/fontSize/xl": {
+              "type": "FLOAT",
+              "value": 20
+            },
+            "typography/fontSize/2xl": {
+              "type": "FLOAT",
+              "value": 24
+            },
+            "typography/fontSize/3xl": {
+              "type": "FLOAT",
+              "value": 30
+            },
+            "typography/fontSize/4xl": {
+              "type": "FLOAT",
+              "value": 36
+            },
+            "typography/fontSize/5xl": {
+              "type": "FLOAT",
+              "value": 48
+            },
+            "typography/fontSize/6xl": {
+              "type": "FLOAT",
+              "value": 64
+            },
+            "typography/fontWeight/thin": {
+              "type": "INTEGER",
+              "value": 100
+            },
+            "typography/fontWeight/extralight": {
+              "type": "INTEGER",
+              "value": 200
+            },
+            "typography/fontWeight/light": {
+              "type": "INTEGER",
+              "value": 300
+            },
+            "typography/fontWeight/normal": {
+              "type": "INTEGER",
+              "value": 400
+            },
+            "typography/fontWeight/medium": {
+              "type": "INTEGER",
+              "value": 500
+            },
+            "typography/fontWeight/semibold": {
+              "type": "INTEGER",
+              "value": 600
+            },
+            "typography/fontWeight/bold": {
+              "type": "INTEGER",
+              "value": 700
+            },
+            "typography/fontWeight/extrabold": {
+              "type": "INTEGER",
+              "value": 800
+            },
+            "typography/fontWeight/black": {
+              "type": "INTEGER",
+              "value": 900
+            },
+            "typography/lineHeight/none": {
+              "type": "FLOAT",
+              "value": 1
+            },
+            "typography/lineHeight/tight": {
+              "type": "FLOAT",
+              "value": 1.25
+            },
+            "typography/lineHeight/snug": {
+              "type": "FLOAT",
+              "value": 1.375
+            },
+            "typography/lineHeight/normal": {
+              "type": "FLOAT",
+              "value": 1.5
+            },
+            "typography/lineHeight/relaxed": {
+              "type": "FLOAT",
+              "value": 1.625
+            },
+            "typography/lineHeight/loose": {
+              "type": "FLOAT",
+              "value": 2
+            },
+            "typography/letterSpacing/tighter": {
+              "type": "FLOAT",
+              "value": -0.8
+            },
+            "typography/letterSpacing/tight": {
+              "type": "FLOAT",
+              "value": -0.4
+            },
+            "typography/letterSpacing/normal": {
+              "type": "FLOAT",
+              "value": 0
+            },
+            "typography/letterSpacing/wide": {
+              "type": "FLOAT",
+              "value": 0.4
+            },
+            "typography/letterSpacing/wider": {
+              "type": "FLOAT",
+              "value": 0.8
+            },
+            "typography/letterSpacing/widest": {
+              "type": "FLOAT",
+              "value": 1.6
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

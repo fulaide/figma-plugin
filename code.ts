@@ -1,6 +1,3 @@
-
-// code.ts (TypeScript file that will be compiled to code.js)
-
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__, { width: 400, height: 600 });
 
@@ -36,8 +33,10 @@ figma.ui.onmessage = async (msg) => {
           }
           
           // Process variables for this mode
-          for (const [varName, varDetails] of Object.entries(mode.variables)) {
-            const details = varDetails as { type: string, value: any };
+          // Using Object.keys() and manual access to avoid Object.entries() compatibility issues
+          const varNames = Object.keys(mode.variables);
+          for (const varName of varNames) {
+            const varDetails = mode.variables[varName] as { type: string, value: any };
             
             // Try to find existing variable
             let variable: Variable;
@@ -53,19 +52,21 @@ figma.ui.onmessage = async (msg) => {
               variable = figma.variables.createVariable(
                 varName,
                 variableCollection.id,
-                convertType(details.type)
+                convertType(varDetails.type)
               );
             }
             
             // Set the value for this mode
-            variable.setValueForMode(modeId, details.value);
+            variable.setValueForMode(modeId, varDetails.value);
           }
         }
       }
       
       figma.notify('Variables imported successfully!');
-    } catch (error) {
-      figma.notify(`Error importing variables: ${error.message}`);
+    } catch (error: any) {
+      // Fixed error handling with type assertion
+      const errorMessage = error?.message || 'Unknown error occurred';
+      figma.notify(`Error importing variables: ${errorMessage}`);
     }
   }
   

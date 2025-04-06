@@ -1,13 +1,14 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "lib": ["es6", "dom"],
-      "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
-      "outDir": "./",
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true
-    },
-    "include": ["code.ts"]
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": ["es2017", "dom"],
+    "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
+    "outDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["code.ts"],
+  "exclude": ["node_modules"]
 }
