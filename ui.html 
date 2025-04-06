@@ -1,0 +1,111 @@
+<html>
+<head>
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    p {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .button-container {
+      display: flex;
+      margin-top: 20px;
+    }
+    button {
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    .primary {
+      background-color: #18A0FB;
+      color: white;
+    }
+    .secondary {
+      background-color: #F5F5F5;
+      color: #333;
+    }
+    #fileInput {
+      margin-bottom: 20px;
+    }
+    .error {
+      color: #E53935;
+      margin-top: 8px;
+    }
+    .success {
+      color: #43A047;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Design Tokens Importer</h2>
+    <p>Import your design tokens as Figma variables.</p>
+    
+    <label for="fileInput">Select your tokens JSON file:</label>
+    <input type="file" id="fileInput" accept=".json">
+    
+    <div id="message"></div>
+    
+    <div class="button-container">
+      <button id="importButton" class="primary" disabled>Import Variables</button>
+      <button id="cancelButton" class="secondary">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    let fileContent = null;
+    const fileInput = document.getElementById('fileInput');
+    const importButton = document.getElementById('importButton');
+    const cancelButton = document.getElementById('cancelButton');
+    const messageDiv = document.getElementById('message');
+    
+    fileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (!file) {
+        importButton.disabled = true;
+        return;
+      }
+      
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          fileContent = JSON.parse(e.target.result);
+          importButton.disabled = false;
+          messageDiv.innerHTML = `<div class="success">File loaded successfully.</div>`;
+        } catch (error) {
+          fileContent = null;
+          importButton.disabled = true;
+          messageDiv.innerHTML = `<div class="error">Invalid JSON file.</div>`;
+        }
+      };
+      reader.readAsText(file);
+    });
+    
+    importButton.addEventListener('click', () => {
+      if (fileContent) {
+        parent.postMessage({ pluginMessage: { type: 'import-variables', variables: fileContent } }, '*');
+        messageDiv.innerHTML = `<div class="success">Importing variables...</div>`;
+      }
+    });
+    
+    cancelButton.addEventListener('click', () => {
+      parent.postMessage({ pluginMessage: { type: 'close' } }, '*');
+    });
+  </script>
+</body>
+</html>
