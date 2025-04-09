@@ -117,7 +117,7 @@ module.exports = {
   platforms: {
     css: {
       transformGroup: 'css',
-      buildPath: 'dist/',
+      buildPath: '',
       files: [
         {
           destination: 'theme.css',
@@ -127,7 +127,7 @@ module.exports = {
     },
     figma: {
       transformGroup: 'js',
-      buildPath: 'dist/',
+      buildPath: '',
       files: [
         {
           destination: 'figma-variables.json',

@@ -1,8 +1,8 @@
 {
-    "name": "Design Tokens Importer",
-    "id": "design-tokens-importer",
-    "api": "1.0.0",
-    "main": "code.js",
+    "name": "Bian Lian Design Tokens Importer",
+    "id": "bian-lian-design-tokens-importer",
+    "api": "1.0.1",
     "ui": "ui.html",
+    "main": "code.js",
     "editorType": ["figma"]
   }

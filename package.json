@@ -10,9 +10,10 @@
     "keywords": [
       "figma",
       "design-tokens",
-      "variables"
+      "variables",
+      "BianLian"
     ],
-    "author": "",
+    "author": "Lars Vorreiter",
     "license": "MIT",
     "dependencies": {
       "style-dictionary": "^3.8.0"
